@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My wife</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.yyzHAca2Dt66hgbyHClMQQHaEO&pid=Api'); /* Daisy wallpaper */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        h1 {
+            color: rgba(255, 255, 102, 0.8); /* Soft yellow with 80% opacity */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black outline effect */
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px; /* Adjusted padding for rectangular buttons */
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 15px; /* Rounded corners */
+            border: 2px solid #fff; /* Button border */
+            background-color: rgba(255, 255, 255, 0.7); /* Slight background color for the button */
+        }
+        #noButton {
+            transition: all 0.2s ease;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1><center>To My Beloved Wife..
+    are you ready to read the letter ( don't click on no!!)</center></h1>
+    <div class="buttons">
+        <button id="yesButton">Yea</button>
+        <button id="noButton">No</button>
+    </div>
+    
+    <div id="popup" class="popup">
+        <h2>Thank you for liking the website! 🎉</h2>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+    <script>
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+        const popup = document.getElementById("popup");
+        
+        noButton.addEventListener("click", () => {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noButton.style.position = "absolute";
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+        
+        yesButton.addEventListener("click", () => {
+            window.location.href = "https://codepen.io/Prince-Manandhar/pen/bNGayKO"; // Redirect to the love letter page
+        });
+        
+        function closePopup() {
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>
